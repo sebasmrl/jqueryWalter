@@ -1,0 +1,45 @@
+
+#form-principal{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    min-height: 20vw;
+}
+.name-card{
+    
+}
+.description-card{
+    
+}
+.btn-add{
+    width:20vw;
+    align-self: flex-end;
+}
+#cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 3px
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width:20vw;
+    margin: 2px;
+    padding: 2px
+   
+}
+.card-body{
+    align-self: center;
+    
+    
+}
+
+.card-img-top{
+    width: 10vw;
+    height: 10vw;
+    align-self: center;
+}

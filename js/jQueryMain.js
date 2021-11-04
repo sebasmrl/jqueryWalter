@@ -35,3 +35,20 @@ $('#btn-colapsado').click((e)=>{
     }
 
 })
+
+$(".navbar").css("padding", "2px")
+            .slideUp(0)
+            .delay(300)
+            .slideDown(1000)
+            
+$(".navbar").animate(
+    {"height": "10vh"}, 
+    "slow", 
+    ()=>{
+        $("#i-buscar").animate(
+            {"width": "30vw"}, 
+            "slow", 
+            ()=>{
+                console.log("fin encadenamiento de animación")
+            })
+    })

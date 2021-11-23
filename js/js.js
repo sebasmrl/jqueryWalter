@@ -9,6 +9,10 @@ console.log(data)
 
 const $form = d.getElementById('form-principal');
 const $cards = d.querySelector('#cards');
+const $btnSesion = d.getElementById("sesion");
+
+
+
 
 //console.log($form.children[2].firstElementChild.nextElementSibling.value )
 //console.log($form.children[3].firstElementChild.nextElementSibling.value )
@@ -84,10 +88,33 @@ $form.addEventListener('submit', (e)=>{
 })
 
 window.addEventListener('DOMContentLoaded', (e)=>{
+
+    const logueado = JSON.parse(ls.getItem('logueado'))
+    //si esta logueado
+    if(logueado){ 
+        $btnSesion.textContent = 'Cerrar Sesion'
+        $btnSesion.classList.replace('btn-success', 'btn-danger')
+        //console.log($btnSesion.classList.contains('btn'))
+    }
+
     data.forEach( producto =>{
        //const { title, description } = producto;
        const card = createCard(producto);
        $cards.appendChild(card)
     })
     
+})
+
+d.addEventListener('click', (e)=>{
+
+    if(e.target === $btnSesion){
+        if(e.target.classList.contains('btn-danger')){
+            ls.setItem('logueado', false)
+            $btnSesion.classList.replace('btn-danger','btn-success')
+            $btnSesion.textContent = 'Iniciar Sesion'
+        }else{
+            window.location.assign("../pages/login.html")
+           
+        }
+    }
 })
